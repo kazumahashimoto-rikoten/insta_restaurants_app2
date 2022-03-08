@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "top_restaurants", id: { type: :integer, unsigned: true }, charset: "utf8mb4", force: :cascade do |t|
     t.string "restaurant_name"
     t.string "short_name"
-    t.string "store_posts_url"
+    t.string "pk"
     t.string "post_code"
     t.string "post_url"
     t.string "station"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "facebook_places_id"
     t.string "lat"
     t.string "lng"
+    t.string "poster_full_name"
+    t.string "poster_username"
     t.datetime "created_at", default: -> { "CURRENT_TIMESTAMP" }
     t.timestamp "updated_at", default: -> { "CURRENT_TIMESTAMP" }, null: false
   end

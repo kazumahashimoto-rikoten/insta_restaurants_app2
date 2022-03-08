@@ -18,7 +18,7 @@
           <%= stations[prev_station_num] %>
         <%end%>
       </h4>
-      <h3 class="col text-center"><%= @station %></h3>
+      <a href="#" class="col text-center h3 text-dark"><%= @station %></a>
       <% next_station_num = station_num == stations.length-1 ? 0 : station_num + 1 %>
       <h4 class="col text-center">
       <%= link_to hoges_new_path(station:stations[next_station_num]), class: "badge badge-dark" do %>
@@ -57,11 +57,17 @@
               <div class="col mt-4 mx-2">
                 <div class="card mb-2" >
                   <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    <h5 class="card-title"><%= restaurant.poster_full_name.empty? ? restaurant.poster_username : restaurant.poster_full_name %>の投稿</h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= restaurant.restaurant_name %></h6>
+                    <p class="card-text ">お店の詳しい情報は以下のリンクから</p>
+                    <p class="card-text">この投稿をインスタグラムで
+                    <a href="<%= restaurant.post_url %>" class="card-link">チェック</a></p>
+                    <p class="card-text">お店についての詳細</p>
+                    <a href="https://www.instagram.com/explore/locations/<%= restaurant.pk %>" class="card-link">instagram</a>
+                    <a href="https://ja-jp.facebook.com/<%= restaurant.facebook_places_id %>" class="card-link">facebook</a>
+                    <p>
+                    <p class="card-text">お店の位置をgooglemapで
+                    <a href="https://www.google.com/maps/place/<%= restaurant.lat %>+<%= restaurant.lng %>" class="card-link">検索</a></p>
                   </div>
                 </div>
                 <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/<%= restaurant.post_code %>/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:0px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
