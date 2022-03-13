@@ -1,24 +1,13 @@
-# README
+# insta_restaurants_app2
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+目的  
+instagram_restaurants_collectorのデータをサイトに掲載するため  
 
-Things you may want to cover:
+サイト情報  
+url: http://13.114.155.169/
+webサーバー: aws ec2
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+環境構築
+```
+bundle install
+```
